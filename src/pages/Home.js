@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../assets/styles/Home.module.scss';
 import ParentsFeedback from './ParentsFeedback';
 
+import contactBg from '../assets/image/backgournd3.jpg';
 import image from '../assets/image/CodingScratch-Wisera.png';
 import icon1 from '../assets/image/icon1.png';
 import icon2 from '../assets/image/icon2.png';
@@ -26,7 +27,11 @@ import blog7 from '../assets/image/blog07.png';
 import blog8 from '../assets/image/blog08.png';
 import blog9 from '../assets/image/blog09.png';
 import blog10 from '../assets/image/blog010.png';
-
+import eduxLogo from '../assets/image/edux-logo.png';
+import digitalSkillsLogo from '../assets/image/digitalskills-logo.png';
+import quicktipsLogo from '../assets/image/quicktips-logo.png';
+import dayhocLogo from '../assets/image/dayhoc-logo.png';
+import hourofcodeLogo from '../assets/image/hourofcode-logo.png';
 const cx = classNames.bind(styles);
 
 const blogData = [
@@ -276,7 +281,6 @@ function Home() {
                         nghệ!
                     </p>
                 </div>
-
                 <div className={cx('blog-slider')}>
                     <div className={cx('blog-slider-inner')}>
                         <img
@@ -284,7 +288,6 @@ function Home() {
                             alt={blogData[activeIndex].title}
                             className={cx('blog-slider-img')}
                         />
-
                         <div className={cx('blog-slider-overlay')}>
                             <h3 className={cx('blog-slider-title')}>{blogData[activeIndex].title}</h3>
                             <div className={cx('blog-slider-dots')}>
@@ -300,7 +303,69 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <ParentsFeedback />
+
+            <div>
+                <ParentsFeedback />
+            </div>
+            <div className={cx('contact-section')}>
+                <img src={contactBg} alt="Background" className={cx('contact-bg')} />
+                <div className={cx('contact-content')}>
+                    <div className={cx('contact-stats')}>
+                        <div className={cx('stat', 'blue')}>
+                            <div className={cx('stat-number')}>+1500</div>
+                            <div className={cx('stat-label')}>STUDENTS</div>
+                        </div>
+                        <div className={cx('stat', 'orange')}>
+                            <div className={cx('stat-number')}>30</div>
+                            <div className={cx('stat-label')}>FACULTY</div>
+                        </div>
+                        <div className={cx('stat', 'yellow')}>
+                            <div className={cx('stat-number')}>+20</div>
+                            <div className={cx('stat-label')}>COURSES</div>
+                        </div>
+                        <div className={cx('stat', 'green')}>
+                            <div className={cx('stat-number')}>+20</div>
+                            <div className={cx('stat-label')}>CLUBS</div>
+                        </div>
+                    </div>
+                    <div className={cx('contact-info')}>
+                        <h2>Hour Of Code</h2>
+                        <div>
+                            <b>Website:</b> scratch.hourofcode.vn
+                        </div>
+                        <div>
+                            <b>Telephone:</b> (+84)2422 688 988
+                        </div>
+                        <div>
+                            <b>Email:</b> contact@edux.edu.vn
+                        </div>
+                        <div>
+                            <b>School Hours:</b> M-F: 8am – 8pm
+                        </div>
+                        <a href="mailto:contact@edux.edu.vn" className={cx('contact-btn')}>
+                            Liên hệ ngay
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('partner-section')}>
+                <div className={cx('partner-container')}>
+                    <h2 className={cx('partner-title')}>Đối tác và nhà tài trợ</h2>
+                    <div className={cx('partner-underline')}></div>
+                    <div className={cx('partner-desc')}>
+                        Hour Of Code Việt Nam trân trọng cảm ơn sự đồng hành và hợp tác của các tổ chức giáo dục và công
+                        nghệ uy tín hàng đầu Việt Nam
+                    </div>
+                    <div className={cx('partner-logos')}>
+                        <img src={eduxLogo} alt="edux" />
+                        <img src={digitalSkillsLogo} alt="Digital Skills" />
+                        <img src={quicktipsLogo} alt="Quicktips" />
+                        <img src={dayhocLogo} alt="Dayhoc" />
+                        <img src={hourofcodeLogo} alt="Hour of Code" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

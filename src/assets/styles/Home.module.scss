@@ -417,3 +417,142 @@ p {
 .blog-slider-dot.active {
     background: #fff;
 }
+
+.contact-section {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    padding: 0;
+    overflow: hidden;
+}
+.contact-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.contact-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 0;
+}
+.contact-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex: 1 1 480px;
+    min-width: 340px;
+}
+.stat {
+    border-radius: 18px;
+    padding: 48px 36px;
+    min-width: 220px;
+    flex: 1 1 200px;
+    text-align: center;
+    opacity: 0.97;
+    color: #fff;
+}
+.stat-number {
+    font-size: 2.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.stat-label {
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.stat.blue {
+    background: #3887f6;
+}
+.stat.orange {
+    background: #ff7e67;
+}
+.stat.yellow {
+    background: #ffb300;
+}
+.stat.green {
+    background: #4caf50;
+}
+
+.contact-info {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(124, 77, 255, 0.1);
+    padding: 48px 48px 40px 48px;
+    min-width: 340px;
+    max-width: 420px;
+    flex: 1 1 340px;
+    opacity: 0.98;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.contact-info h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 24px;
+}
+.contact-btn {
+    display: inline-block;
+    background: #7c4dff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 32px;
+    padding: 18px 48px;
+    font-size: 1.15em;
+    text-decoration: none;
+    margin-top: 12px;
+}
+.partner-section {
+    background: #fff;
+    padding: 80px 0 60px 0;
+}
+.partner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.partner-title {
+    color: #7c4dff;
+    font-size: 2.6em;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+.partner-underline {
+    width: 220px;
+    height: 3px;
+    background: #2de1fc;
+    margin: 0 auto 32px auto;
+    border-radius: 2px;
+}
+.partner-desc {
+    font-size: 1.25em;
+    color: #222;
+    margin-bottom: 38px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px 56px;
+}
+.partner-logos img {
+    height: 60px;
+}
