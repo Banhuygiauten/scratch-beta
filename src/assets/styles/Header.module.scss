@@ -1,8 +1,29 @@
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-    padding: 18px 0; // tăng chiều cao
+    padding: 18px 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: padding 0.3s, background 0.3s;
+}
+
+.header.shrink {
+    padding: 6px 0;
+    background: #6c47a6;
+}
+
+.header.shrink .nav-list li a,
+.header.shrink .search-icon {
+    color: #fff;
+}
+
+.header.shrink .logo img {
+    height: 40px;
+    transition: height 0.3s;
 }
 
 .container {
@@ -26,7 +47,7 @@
 .nav-list {
     display: flex;
     justify-content: center;
-    gap: 28px; // khoảng cách rộng hơn
+    gap: 28px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -35,8 +56,8 @@
 .nav-list li a {
     text-decoration: none;
     color: #222;
-    font-weight: 700; // đậm hơn
-    font-size: 18px; // chữ to hơn
+    font-weight: 700;
+    font-size: 18px;
     transition: color 0.2s ease;
 }
 
@@ -51,7 +72,6 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: #f0f0f0;
     cursor: pointer;
 }
 

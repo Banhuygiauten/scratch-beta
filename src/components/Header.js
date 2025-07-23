@@ -1,5 +1,5 @@
 import { FaSearch } from 'react-icons/fa';
-//import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from '../assets/styles/Header.module.scss';
 import logo from '../assets/image/Scratch_logo.svg';
@@ -7,8 +7,16 @@ import logo from '../assets/image/Scratch_logo.svg';
 const cx = classNames.bind(styles);
 
 const Header = () => {
+    const [shrink, setShrink] = useState(false);
+    const handleScroll = () => {
+        setShrink(window.scrollY > 40);
+    };
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
-        <header className={cx('header')}>
+        <header className={cx('header', { shrink })}>
             <div className={cx('container')}>
                 <div className={cx('logo')}>
                     <a href="/">

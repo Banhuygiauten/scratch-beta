@@ -9,6 +9,10 @@ import icon5 from '../assets/image/icon5.png';
 import icon6 from '../assets/image/icon6.png';
 import icon7 from '../assets/image/icon7.png';
 import icon8 from '../assets/image/icon8.png';
+import course1 from '../assets/image/course1.png';
+import course2 from '../assets/image/course2.png';
+import course3 from '../assets/image/course3.png';
+import houofcode from '../assets/image/scratch-hourofcode.png';
 
 const cx = classNames.bind(styles);
 
@@ -122,6 +126,107 @@ function Home() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('courses-section')}>
+                <div className={cx('courses-header')}>
+                    <h2>Khóa học nổi bật</h2>
+                    <a href="/course" className={cx('view-all-btn')}>
+                        Xem tất cả
+                    </a>
+                </div>
+
+                <div className={cx('courses-list')}>
+                    <div className={cx('courses-item')}>
+                        <div>
+                            <img src={course1} alt="Luyện thi tin học trẻ Scratch" />
+                        </div>
+                        <div className={cx('courses-info')}>
+                            <h3>Luyện thi tin học trẻ Scratch</h3>
+                            <p>
+                                Giáo viên: Lê Thùy Anh
+                                <br />
+                                Thời lượng: 20 buổi
+                            </p>
+                            <a href="/" className={cx('courses-link')}>
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                    <div className={cx('courses-item')}>
+                        <div>
+                            <img src={course2} alt="Điều khiển robot với Scratch" />
+                        </div>
+                        <div className={cx('courses-info')}>
+                            <h3>Điều khiển robot với Scratch</h3>
+                            <p>
+                                Giáo viên: Billy Nguyễn
+                                <br />
+                                Thời lượng: 25 buổi
+                            </p>
+                            <a href="/" className={cx('courses-link')}>
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                    <div className={cx('courses-item')}>
+                        <div>
+                            <img src={course3} alt="Trí tuệ nhân tạo với Scratch" />
+                        </div>
+                        <div className={cx('courses-info')}>
+                            <h3>Trí tuệ nhân tạo với Scratch</h3>
+                            <p>
+                                Giáo viên: Billy Nguyễn
+                                <br />
+                                Thời lượng: 30 buổi
+                            </p>
+                            <a href="/" className={cx('courses-link')}>
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('register-section')}>
+                <div className={cx('heroContainer')}>
+                    <div className={cx('heroImage')}>
+                        <img src={houofcode} alt="Scratch Block Example" />
+                    </div>
+                    <div className={cx('heroContent')}>
+                        <h1>Lập trình scratch dễ như đếm...!</h1>
+                        <hr />
+                        <p>
+                            Scratch được thiết kế giúp cho trẻ em và những người mới bắt đầu tìm hiểu và tiếp cận nhất
+                            với bộ môn lập trình. Nhiệm vụ của người học chỉ cần kéo và thả các khối lệnh đúng vị trí...
+                            và tận hưởng thành quả của mình...!
+                        </p>
+                        <a href="#" className={cx('btnYellow')}>
+                            BẮT ĐẦU NGAY &nbsp; &gt;
+                        </a>
+                        <div className={cx('cardsContainer')}>
+                            <div className={cx('card')}>
+                                <div className={cx('cardHeader')}>
+                                    <img src="https://img.icons8.com/color/48/000000/free-shipping.png" alt="Free" />
+                                    <b>Đăng ký học thử miễn phí</b>
+                                </div>
+                                <div className={cx('cardText')}>
+                                    Hour Of Code thường xuyên mở các lớp học thử miễn phí, Bấm đăng ký để trải nghiệm
+                                </div>
+                            </div>
+                            <div className={cx('card')}>
+                                <div className={cx('cardHeader')}>
+                                    <img src="https://img.icons8.com/color/48/000000/approval--v2.png" alt="Register" />
+                                    <b>Đăng ký lớp Ôn luyện Tin học trẻ</b>
+                                </div>
+                                <div className={cx('cardText')}>
+                                    Hãy đăng ký ngay khoá học của chúng tôi để bắt đầu hành trình chinh phục các giải
+                                    thưởng Tin học trẻ
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
