@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
+import React, { useState, useEffect } from 'react';
 import styles from '../assets/styles/Home.module.scss';
+
 import image from '../assets/image/CodingScratch-Wisera.png';
 import icon1 from '../assets/image/icon1.png';
 import icon2 from '../assets/image/icon2.png';
@@ -13,8 +15,31 @@ import course1 from '../assets/image/course1.png';
 import course2 from '../assets/image/course2.png';
 import course3 from '../assets/image/course3.png';
 import houofcode from '../assets/image/scratch-hourofcode.png';
+import blog1 from '../assets/image/blog01.png';
+import blog2 from '../assets/image/blog02.png';
+import blog3 from '../assets/image/blog03.png';
+import blog4 from '../assets/image/blog04.png';
+import blog5 from '../assets/image/blog05.png';
+import blog6 from '../assets/image/blog06.png';
+import blog7 from '../assets/image/blog07.png';
+import blog8 from '../assets/image/blog08.png';
+import blog9 from '../assets/image/blog09.png';
+import blog10 from '../assets/image/blog010.png';
 
 const cx = classNames.bind(styles);
+
+const blogData = [
+    { title: 'Làm sao học AI hiệu quả?', image: blog1 },
+    { title: 'Dạy trẻ AI từ lớp 1', image: blog2 },
+    { title: 'Lập trình game với Scratch', image: blog3 },
+    { title: 'Scratch sáng tạo cho trẻ', image: blog4 },
+    { title: 'Scratch từ lớp 1', image: blog5 },
+    { title: 'Dự án Scratch đơn giản', image: blog6 },
+    { title: 'Khóa học Scratch online', image: blog7 },
+    { title: 'Phương pháp dạy Scratch', image: blog8 },
+    { title: 'Thư viện đề thi Scratch', image: blog9 },
+    { title: 'Bài tập Scratch cơ bản', image: blog10 },
+];
 
 const features = [
     {
@@ -68,6 +93,15 @@ const features = [
 ];
 
 function Home() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const nextSlide = () => setActiveIndex((prev) => (prev + 1) % blogData.length);
+    const goToSlide = (index) => setActiveIndex(index);
+
+    useEffect(() => {
+        const interval = setInterval(nextSlide, 5000);
+        return () => clearInterval(interval);
+    }, [activeIndex]);
+
     return (
         <div className={cx('home')}>
             <div className={cx('content-hero')}>
@@ -203,7 +237,7 @@ function Home() {
                             với bộ môn lập trình. Nhiệm vụ của người học chỉ cần kéo và thả các khối lệnh đúng vị trí...
                             và tận hưởng thành quả của mình...!
                         </p>
-                        <a href="#" className={cx('btnYellow')}>
+                        <a href="/" className={cx('btnYellow')}>
                             BẮT ĐẦU NGAY &nbsp; &gt;
                         </a>
                         <div className={cx('cardsContainer')}>
@@ -225,6 +259,41 @@ function Home() {
                                     Hãy đăng ký ngay khoá học của chúng tôi để bắt đầu hành trình chinh phục các giải
                                     thưởng Tin học trẻ
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('blog-section')}>
+                <div className={cx('textContent')}>
+                    <h2>Bài viết nổi bật</h2>
+                    <p>
+                        Hãy cùng khám phá những câu chuyện và các góc nhìn đa chiều qua các bài viết nổi bật của chúng
+                        tôi!
+                        <br /> Mỗi blog sẽ truyền cảm hứng và mở ra cơ hội giúp các bạn trẻ chinh phục thế giới công
+                        nghệ!
+                    </p>
+                </div>
+
+                <div className={cx('blog-slider')}>
+                    <div className={cx('blog-slider-inner')}>
+                        <img
+                            src={blogData[activeIndex].image}
+                            alt={blogData[activeIndex].title}
+                            className={cx('blog-slider-img')}
+                        />
+
+                        <div className={cx('blog-slider-overlay')}>
+                            <h3 className={cx('blog-slider-title')}>{blogData[activeIndex].title}</h3>
+                            <div className={cx('blog-slider-dots')}>
+                                {blogData.map((_, i) => (
+                                    <span
+                                        key={i}
+                                        onClick={() => goToSlide(i)}
+                                        className={cx('blog-slider-dot', { active: i === activeIndex })}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
