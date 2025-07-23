@@ -1,0 +1,28 @@
+.search-container {
+    position: absolute;
+    top: 100%; // nếu bạn muốn nó hiện dưới header
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.exit-btn {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}

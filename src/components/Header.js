@@ -1,20 +1,29 @@
-import { FaSearch } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import classNames from 'classnames/bind';
 import styles from '../assets/styles/Header.module.scss';
 import logo from '../assets/image/Scratch_logo.svg';
+
+import Search from './Search';
 
 const cx = classNames.bind(styles);
 
 const Header = () => {
     const [shrink, setShrink] = useState(false);
+    const [showSearch, setShowSearch] = useState(false); // Thêm state
+
     const handleScroll = () => {
         setShrink(window.scrollY > 40);
     };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleShowSearch = () => setShowSearch(true);
+    const handleHideSearch = () => setShowSearch(false);
+
     return (
         <header className={cx('header', { shrink })}>
             <div className={cx('container')}>
@@ -50,9 +59,11 @@ const Header = () => {
                     </ul>
                 </nav>
 
-                <div className={cx('search-btn')}>
-                    <FaSearch className={cx('search-icon')} />
+                <div className={cx('search-btn')} onClick={handleShowSearch}>
+                    <FaSearch className="search-icon" />
                 </div>
+
+                {showSearch && <Search onClose={handleHideSearch} />}
             </div>
         </header>
     );
