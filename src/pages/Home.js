@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import React, { useState, useEffect } from 'react';
 import styles from '../assets/styles/Home.module.scss';
+import ParentsFeedback from './ParentsFeedback';
 
 import image from '../assets/image/CodingScratch-Wisera.png';
 import icon1 from '../assets/image/icon1.png';
@@ -299,6 +300,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <ParentsFeedback />
         </div>
     );
 }
