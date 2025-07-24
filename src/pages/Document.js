@@ -103,7 +103,7 @@ const documentItem = [
         file: 'dowload12.pdf',
     },
 ];
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 6;
 
 function Document() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -115,6 +115,27 @@ function Document() {
         const end = start + ITEMS_PER_PAGE;
         return documentItem.slice(start, end);
     }, [currentPage]);
+
+    const getMiddlePages = (current, total) => {
+        const pages = [];
+
+        if (total <= 5) {
+            for (let i = 2; i < total; i++) {
+                pages.push(i);
+            }
+            return pages;
+        }
+
+        if (current <= 3) {
+            return [2, 3, 4];
+        }
+
+        if (current >= total - 2) {
+            return [total - 3, total - 2, total - 1];
+        }
+
+        return [current - 1, current, current + 1];
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -128,7 +149,7 @@ function Document() {
                 </section>
 
                 <div className={cx('dcmt-wrapper')}>
-                    <div className={cx('document-grid')}>
+                    <div className={cx('documents-grid')}>
                         {currentItems.map((doc, index) => (
                             <div className={cx('document-card')} key={index}>
                                 <img src={doc.img} alt={doc.title} />
@@ -143,19 +164,48 @@ function Document() {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className={cx('pagination')}>
+                    <button
+                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                        disabled={currentPage === 1}
+                    >
+                        &lt;
+                    </button>
 
-                    {/* PHÂN TRANG */}
-                    <div className={cx('pagination')}>
-                        {Array.from({ length: totalPages }, (_, index) => (
-                            <button
-                                className={currentPage === index + 1 ? 'active' : ''}
-                                onClick={() => setCurrentPage(index + 1)}
-                                key={index}
-                            >
-                                {index + 1}
-                            </button>
-                        ))}
-                    </div>
+                    <button className={cx({ active: currentPage === 1 })} onClick={() => setCurrentPage(1)}>
+                        1
+                    </button>
+
+                    {currentPage > 3 && totalPages > 5 && <span>...</span>}
+
+                    {getMiddlePages(currentPage, totalPages).map((page) => (
+                        <button
+                            key={page}
+                            className={cx({ active: currentPage === page })}
+                            onClick={() => setCurrentPage(page)}
+                        >
+                            {page}
+                        </button>
+                    ))}
+
+                    {currentPage < totalPages - 2 && totalPages > 5 && <span>...</span>}
+
+                    {totalPages > 1 && (
+                        <button
+                            className={cx({ active: currentPage === totalPages })}
+                            onClick={() => setCurrentPage(totalPages)}
+                        >
+                            {totalPages}
+                        </button>
+                    )}
+
+                    <button
+                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                    >
+                        &gt;
+                    </button>
                 </div>
             </div>
         </div>

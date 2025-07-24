@@ -1,0 +1,309 @@
+/* --- Register Layout --- */
+.register-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 120px auto 0 auto;
+    padding: 0 12px;
+}
+
+.register-form-col {
+    flex: 2;
+    min-width: 340px;
+}
+
+.form-container {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(124, 77, 255, 0.1);
+    padding: 28px 22px 18px 22px;
+}
+
+.register-aside-col {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.register-aside-box {
+    background: #f7f3ff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(124, 77, 255, 0.06);
+    padding: 22px 16px 18px 16px;
+    text-align: center;
+}
+
+.aside-title {
+    color: #7c4dff;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.aside-desc {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.register-aside-imgbox {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(124, 77, 255, 0.06);
+    padding: 12px 10px 10px 10px;
+    text-align: center;
+}
+
+.register-aside-imgbox img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.aside-img-caption {
+    color: #7c4dff;
+    font-weight: bold;
+    font-size: 1.08em;
+    margin-top: 4px;
+}
+
+/* --- Form Style --- */
+.form-title {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.form-desc {
+    color: #555;
+    font-size: 0.98em;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.form-group input[type='text'],
+.form-group input[type='email'],
+.form-group input[type='number'],
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #f6f7fb;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border: 1.5px solid #7c4dff;
+    outline: none;
+}
+
+.form-group .checkbox-group {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group .checkbox-group label {
+    font-weight: 400;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+.form-group .checkbox-group input[type='checkbox'] {
+    accent-color: #7c4dff;
+    width: 16px;
+    height: 16px;
+}
+
+.required {
+    color: #d32f2f;
+    margin-left: 2px;
+    font-size: 1em;
+}
+
+.form-submit {
+    width: 100%;
+    background: #7c4dff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-submit:hover {
+    background: #5e35b1;
+}
+
+.form-note {
+    font-size: 0.95em;
+    color: #666;
+    margin: 18px 0 0 0;
+    text-align: left;
+}
+
+.form-footer {
+    margin-top: 28px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+    font-size: 0.92em;
+    color: #888;
+    text-align: left;
+}
+
+/* Bổ sung hoặc ghi đè các class cho aside */
+.custom-aside-box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(124, 77, 255, 0.1);
+    padding: 22px 16px 18px 16px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.aside-logo {
+    width: 90px;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+.custom-caption {
+    color: #ffd600;
+    font-weight: bold;
+    font-size: 1.08em;
+    margin-bottom: 0;
+    margin-top: 0;
+    letter-spacing: 0.5px;
+}
+
+.custom-aside-imgbox {
+    background: #f7f3ff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(124, 77, 255, 0.1);
+    padding: 14px 10px 10px 10px;
+    text-align: center;
+}
+
+.ai-for-kids-box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(124, 77, 255, 0.08);
+    padding: 10px 8px 8px 8px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    text-align: center;
+    position: relative;
+}
+
+.ai-for-kids-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.ai-for-kids-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 6px;
+    margin-top: -2px;
+    letter-spacing: 0.5px;
+}
+
+.ai-for-kids-review {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(124, 77, 255, 0.07);
+    padding: 8px 8px 6px 8px;
+    margin: 0 auto 8px auto;
+    width: 90%;
+    font-size: 0.97em;
+    text-align: left;
+}
+
+.ai-for-kids-review .reviewer {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 2px;
+}
+
+.ai-for-kids-review .review-text {
+    color: #333;
+    margin: 4px 0 2px 0;
+    font-weight: 400;
+}
+
+.ai-for-kids-link {
+    color: #888;
+    font-size: 0.95em;
+    margin-top: 2px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .register-main {
+        flex-direction: column;
+        gap: 24px;
+        max-width: 98vw;
+    }
+
+    .register-aside-col {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .register-aside-box,
+    .register-aside-imgbox {
+        min-width: 0;
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .register-main {
+        padding: 0 2vw;
+    }
+
+    .form-container {
+        padding: 12px 4vw 8px 4vw;
+    }
+
+    .register-aside-col {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .custom-aside-box,
+    .custom-aside-imgbox {
+        padding: 10px 4vw 8px 4vw;
+    }
+}

@@ -3,7 +3,7 @@
 }
 
 .promo-banner {
-    background-color: #5566b8; // Màu nền như hình
+    background-color: #5566b8;
     padding: 90px 0 80px;
     text-align: center;
     position: relative;
@@ -111,12 +111,12 @@
 
 .course-layout {
     display: flex;
-    justify-content: flex-end; // ✅ căn toàn bộ danh sách sang phải
+    justify-content: flex-end;
 }
 
 .courses {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // ✅ 3 item mỗi hàng
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 

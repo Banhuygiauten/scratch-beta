@@ -6,7 +6,6 @@ import Course from '../pages/Course';
 import Document from '../pages/Document';
 import Register from '../pages/Register';
 import Solve from '../pages/Solve';
-
 import About from '../pages/About';
 
 const AppRoutes = [
@@ -18,10 +17,13 @@ const AppRoutes = [
             { path: '/contact', element: <Contact /> },
             { path: '/course', element: <Course /> },
             { path: '/document', element: <Document /> },
-            { path: '/register', element: <Register /> },
+
             { path: '/solve', element: <Solve /> },
             { path: '/about', element: <About /> },
         ],
+    },
+    {
+        children: [{ path: '/register', element: <Register /> }],
     },
 ];
 

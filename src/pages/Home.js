@@ -36,16 +36,16 @@ import hourofcodeLogo from '../assets/image/hourofcode-logo.png';
 const cx = classNames.bind(styles);
 
 const blogData = [
-    { title: 'Làm sao học AI hiệu quả?', image: blog1 },
-    { title: 'Dạy trẻ AI từ lớp 1', image: blog2 },
-    { title: 'Lập trình game với Scratch', image: blog3 },
-    { title: 'Scratch sáng tạo cho trẻ', image: blog4 },
-    { title: 'Scratch từ lớp 1', image: blog5 },
-    { title: 'Dự án Scratch đơn giản', image: blog6 },
-    { title: 'Khóa học Scratch online', image: blog7 },
-    { title: 'Phương pháp dạy Scratch', image: blog8 },
-    { title: 'Thư viện đề thi Scratch', image: blog9 },
-    { title: 'Bài tập Scratch cơ bản', image: blog10 },
+    { title: 'Làm sao học AI hiệu quả?', image: blog1, link: '/' },
+    { title: 'Dạy trẻ AI từ lớp 1', image: blog2, link: '/' },
+    { title: 'Lập trình game với Scratch', image: blog3, link: '/' },
+    { title: 'Scratch sáng tạo cho trẻ', image: blog4, link: '/' },
+    { title: 'Scratch từ lớp 1', image: blog5, link: '/' },
+    { title: 'Dự án Scratch đơn giản', image: blog6, link: '/' },
+    { title: 'Khóa học Scratch online', image: blog7, link: '/' },
+    { title: 'Phương pháp dạy Scratch', image: blog8, link: '/' },
+    { title: 'Thư viện đề thi Scratch', image: blog9, link: '/' },
+    { title: 'Bài tập Scratch cơ bản', image: blog10, link: '/' },
 ];
 
 const features = [
@@ -290,6 +290,7 @@ function Home() {
                             alt={blogData[activeIndex].title}
                             className={cx('blog-slider-img')}
                         />
+
                         <div className={cx('blog-slider-overlay')}>
                             <h3 className={cx('blog-slider-title')}>{blogData[activeIndex].title}</h3>
                             <div className={cx('blog-slider-dots')}>
@@ -302,6 +303,14 @@ function Home() {
                                 ))}
                             </div>
                         </div>
+                        <a
+                            href={blogData[activeIndex].link}
+                            className={cx('btn-read')}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Read More
+                        </a>
                         <div className={cx('blog-slider-btn')}>
                             <button className={cx('prev')} aria-label="prev" onClick={prevSlide}>
                                 &#10094;

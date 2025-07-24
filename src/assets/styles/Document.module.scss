@@ -1,9 +1,10 @@
 .wrapper {
     margin-top: 100px;
     padding: 0 20px;
+
     .container {
         max-width: 1200px;
-        margin: auto;
+        margin: 0 auto;
     }
 }
 
@@ -13,24 +14,23 @@
     text-align: center;
 
     h2 {
-        font-size: 2em;
+        font-size: 2rem;
         margin-bottom: 12px;
         color: #6c47a6;
     }
 }
 
 .documents-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
     margin-top: 30px;
 }
 
 .document-card {
-    align-items: center;
-    margin-top: 30px;
-    width: calc(50% - 12px);
-    max-width: 500px;
+    width: 100%;
+    max-width: 360px;
     background: #fff;
     padding: 20px;
     border-radius: 12px;
@@ -50,28 +50,34 @@
     }
 
     h3 {
-        font-size: 1.1em;
+        font-size: 1.5rem;
         margin-bottom: 12px;
     }
 
     p {
-        font-size: 0.95em;
+        font-size: 1.2rem;
         color: #555;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+
+        &:last-of-type {
+            margin-bottom: 16px;
+        }
     }
-}
-.download-link {
-    display: inline-block;
-    color: #6c47a6;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid #6c47a6;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    &:hover {
-        background-color: #6c47a6;
-        color: #fff;
+
+    .download-link {
+        display: inline-block;
+        color: #6c47a6;
+        font-weight: bold;
+        text-decoration: none;
+        border: 1px solid #6c47a6;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #6c47a6;
+            color: #fff;
+        }
     }
 }
 
@@ -80,25 +86,30 @@
     justify-content: center;
     margin-top: 32px;
     gap: 8px;
-}
 
-.pagination button {
-    padding: 8px 14px;
-    border: 1px solid #ccc;
-    background: #f9f9f9;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: background 0.2s;
+    button {
+        padding: 8px 14px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: background 0.2s;
 
-    &:hover {
-        background: #e2e2e2;
+        &:hover {
+            background: #e2e2e2;
+        }
+
+        &.active {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            border-color: #007bff;
+        }
     }
 }
 
-.pagination button.active {
-    background: #007bff;
-    color: white;
-    font-weight: bold;
-    border-color: #007bff;
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

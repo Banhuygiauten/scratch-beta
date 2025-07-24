@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
+
 import classNames from 'classnames/bind';
 import styles from '../assets/styles/Header.module.scss';
 import logo from '../assets/image/Scratch_logo.svg';
@@ -24,6 +26,8 @@ const Header = () => {
     const handleShowSearch = () => setShowSearch(true);
     const handleHideSearch = () => setShowSearch(false);
 
+    const location = useLocation();
+
     return (
         <header className={cx('header', { shrink })}>
             <div className={cx('container')}>
@@ -36,25 +40,39 @@ const Header = () => {
                 <nav className={cx('nav')}>
                     <ul className={cx('nav-list')}>
                         <li>
-                            <a href="/">Home</a>
+                            <a href="/" className={cx({ active: location.pathname === '/' })}>
+                                Home
+                            </a>
                         </li>
                         <li>
-                            <a href="/course">Khóa học</a>
+                            <a href="/course" className={cx({ active: location.pathname === '/course' })}>
+                                Khóa học
+                            </a>
                         </li>
                         <li>
-                            <a href="/document">Kho tài liệu</a>
+                            <a href="/document" className={cx({ active: location.pathname === '/document' })}>
+                                Kho tài liệu
+                            </a>
                         </li>
                         <li>
-                            <a href="/solve">Hướng dẫn giải đề</a>
+                            <a href="/solve" className={cx({ active: location.pathname === '/solve' })}>
+                                Hướng dẫn giải đề
+                            </a>
                         </li>
                         <li>
-                            <a href="/blog">Blog</a>
+                            <a href="/blog" className={cx({ active: location.pathname === '/blog' })}>
+                                Blog
+                            </a>
                         </li>
                         <li>
-                            <a href="/register">Đăng ký học</a>
+                            <a href="/register" className={cx({ active: location.pathname === '/register' })}>
+                                Đăng ký học
+                            </a>
                         </li>
                         <li>
-                            <a href="/contact">Liên hệ</a>
+                            <a href="/contact" className={cx({ active: location.pathname === '/contact' })}>
+                                Liên hệ
+                            </a>
                         </li>
                     </ul>
                 </nav>
