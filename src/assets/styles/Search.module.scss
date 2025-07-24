@@ -1,14 +1,7 @@
 .search-container {
-    position: absolute;
-    top: 100%; // nếu bạn muốn nó hiện dưới header
-    right: 0;
-    left: 0;
-    background-color: white;
     z-index: 1000;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .search-input {

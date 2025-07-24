@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import React, { useState, useEffect } from 'react';
-import styles from '../assets/styles/Home.module.scss';
+import styles from '~/assets/styles/Home.module.scss';
 import ParentsFeedback from './ParentsFeedback';
 
 import contactBg from '../assets/image/backgournd3.jpg';
@@ -32,6 +32,7 @@ import digitalSkillsLogo from '../assets/image/digitalskills-logo.png';
 import quicktipsLogo from '../assets/image/quicktips-logo.png';
 import dayhocLogo from '../assets/image/dayhoc-logo.png';
 import hourofcodeLogo from '../assets/image/hourofcode-logo.png';
+
 const cx = classNames.bind(styles);
 
 const blogData = [
@@ -101,6 +102,7 @@ const features = [
 function Home() {
     const [activeIndex, setActiveIndex] = useState(0);
     const nextSlide = () => setActiveIndex((prev) => (prev + 1) % blogData.length);
+    const prevSlide = () => setActiveIndex((prev) => (prev - 1 + blogData.length) % blogData.length);
     const goToSlide = (index) => setActiveIndex(index);
 
     useEffect(() => {
@@ -299,6 +301,14 @@ function Home() {
                                     />
                                 ))}
                             </div>
+                        </div>
+                        <div className={cx('blog-slider-btn')}>
+                            <button className={cx('prev')} aria-label="prev" onClick={prevSlide}>
+                                &#10094;
+                            </button>
+                            <button className={cx('next')} aria-label="next" onClick={nextSlide}>
+                                &#10095;
+                            </button>
                         </div>
                     </div>
                 </div>

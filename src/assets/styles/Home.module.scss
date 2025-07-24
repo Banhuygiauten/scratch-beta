@@ -1,3 +1,9 @@
+.home {
+    box-sizing: border-box;
+    margin-top: 120px;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
 .content-hero {
     display: flex;
     align-items: center;
@@ -555,4 +561,89 @@ p {
 }
 .partner-logos img {
     height: 60px;
+}
+
+.blog-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.blog-slider-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.blog-slider-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.blog-slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.blog-slider-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+.blog-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.blog-slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.blog-slider-dot.active {
+    background: #fff;
+}
+
+/* Nút chuyển slide */
+.blog-slider-btn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 2;
+}
+.blog-slider-btn button {
+    background: transparent;
+    color: #7c4dff;
+    border: none;
+    border-radius: 0;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: color 0.2s;
+    box-shadow: none;
+    padding: 0 8px;
+    line-height: 1;
+    pointer-events: auto;
+}
+.blog-slider-btn button:hover {
+    color: #fffef8;
+    background: transparent;
+}
+.prev {
+    margin-left: 16px;
+}
+.next {
+    margin-right: 16px;
 }
